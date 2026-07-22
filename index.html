@@ -896,11 +896,11 @@
       var totalSil = subtotalSil + gstSil;
 
       // Final Output
-      document.getElementById('ftotal-22k').innerHTML = '<span class="ft-label">Total ₹</span>' + (total22 > 0 ? formatNum(total22) : '\u2014');
-      document.getElementById('ftotal-20k').innerHTML = '<span class="ft-label">Total ₹</span>' + (total20 > 0 ? formatNum(total20) : '\u2014');
-      document.getElementById('ftotal-18k').innerHTML = '<span class="ft-label">Total ₹</span>' + (total18 > 0 ? formatNum(total18) : '\u2014');
-      document.getElementById('ftotal-9k').innerHTML = '<span class="ft-label">Total ₹</span>' + (total9 > 0 ? formatNum(total9) : '\u2014');
-      document.getElementById('ftotal-sil').innerHTML = '<span class="ft-label">Total ₹</span>' + (totalSil > 0 ? formatNum(totalSil) : '\u2014');
+      document.getElementById('ftotal-22k').innerHTML = '<span class="ft-label">Customer Pays ₹</span>' + (total22 > 0 ? formatNum(total22) : '\u2014');
+      document.getElementById('ftotal-20k').innerHTML = '<span class="ft-label">Customer Pays ₹</span>' + (total20 > 0 ? formatNum(total20) : '\u2014');
+      document.getElementById('ftotal-18k').innerHTML = '<span class="ft-label">Customer Pays ₹</span>' + (total18 > 0 ? formatNum(total18) : '\u2014');
+      document.getElementById('ftotal-9k').innerHTML = '<span class="ft-label">Customer Pays ₹</span>' + (total9 > 0 ? formatNum(total9) : '\u2014');
+      document.getElementById('ftotal-sil').innerHTML = '<span class="ft-label">Customer Pays ₹</span>' + (totalSil > 0 ? formatNum(totalSil) : '\u2014');
 
       setText('making-total-22k', formatINR(making22));
       setText('making-total-20k', formatINR(making20));
