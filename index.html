@@ -43,6 +43,8 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  html, body { overflow-x: hidden; }
+
   body {
     background: #8a7510;
     font-family: 'Rajdhani', Arial, sans-serif;
@@ -55,12 +57,13 @@
 
   /* All full-width bars */
   .title-bar {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
   }
   .actions-bar {
-    width: calc(100vw - 32px);
+    width: 100%;
     max-width: 1200px;
+    padding: 0 16px;
   }
 
   /* Title bar — dark warm black with gold text, exactly like screenshot */
@@ -146,8 +149,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
-    width: calc(100vw - 32px);
+    width: 100%;
     max-width: 1200px;
+    padding: 0 16px;
     background: #8a7510;
     padding: 8px 0;
   }
