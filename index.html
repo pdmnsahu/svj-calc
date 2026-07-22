@@ -98,9 +98,9 @@
     border-radius: 3px;
     padding: 4px 2px;
     font-family: 'Rajdhani', Arial, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
-    width: 90%;
+    width: 95%;
     text-align: center;
     outline: none;
     -moz-appearance: textfield;
@@ -121,19 +121,19 @@
     text-transform: uppercase;
   }
 
-  /* Info rows (stacked for narrow columns) */
+  /* Info rows */
   .info-row {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4px 2px;
+    padding: 4px 1px;
     gap: 1px;
     text-align: center;
   }
   
-  .info-row .ir-label { font-size: 9px; font-weight: 600; text-transform: uppercase; }
-  .info-row .ir-val { font-size: 12px; font-weight: 700; word-break: break-all; }
+  .info-row .ir-label { font-size: 8px; font-weight: 600; text-transform: uppercase; }
+  .info-row .ir-val { font-size: 11px; font-weight: 700; word-break: break-all; }
 
   .info-row.rate-info { background: #3a3a3a; }
   .info-row.rate-info .ir-label { color: #888888; }
@@ -151,36 +151,31 @@
   .info-row.base-info .ir-label { color: #88cc88; }
   .info-row.base-info .ir-val { color: #ffffff; }
 
-  /* Making charge inputs (Stacked for 5 cols) */
+  /* Single-row Making charge inputs without 'Making' text */
   .making-input-cell {
     background: #3a3a3a;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    padding: 6px 2px;
-  }
-  
-  .making-input-cell .mc-row {
-    display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    gap: 2px;
+    gap: 1px;
+    padding: 5px 1px;
+    overflow: hidden;
   }
   
   .making-input-cell input {
     background: #1a1a1a;
     color: #ffffff;
     border: 1px solid #555;
-    border-radius: 3px;
-    padding: 2px;
+    border-radius: 2px;
+    padding: 2px 1px;
     font-family: 'Rajdhani', Arial, sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
-    width: 80%;
-    text-align: center;
+    width: 22px;
+    text-align: right;
     outline: none;
+    flex-shrink: 1;
+    min-width: 0;
     -moz-appearance: textfield;
   }
   
@@ -188,22 +183,70 @@
   .making-input-cell input::-webkit-inner-spin-button { -webkit-appearance: none; }
   .making-input-cell input:focus { border-color: #d4a820; }
   
-  .making-input-cell .mc-unit { color: #d4a820; font-size: 9px; font-weight: 700; width: 12px; text-align: left; }
-  .making-input-cell .mc-calc { color: #bbbbbb; font-size: 10px; font-weight: 600; border-top: 1px solid #555; width: 90%; text-align: center; padding-top: 2px; margin-top: 2px; word-break: break-all; }
-
-  /* HM specific styles inside Making Cell */
-  .hm-input-wrap { display: flex; align-items: center; justify-content: center; width: 100%; gap: 2px; }
-  .hm-label { font-size: 9px; color: #c8aa30; font-weight: 700; }
-  .hm-input { border-color: #7a6010 !important; color: #c8aa30 !important; }
+  .making-input-cell .mc-unit {
+    color: #d4a820;
+    font-size: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .making-input-cell .mc-sep {
+    color: #555;
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+  
+  .making-input-cell .mc-calc {
+    color: #bbbbbb;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+  
+  .making-input-cell .hm-sep {
+    color: #555;
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+  
+  .making-input-cell .hm-label {
+    color: #c8aa30;
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .making-input-cell .hm-input {
+    background: #1a1a1a;
+    color: #c8aa30 !important;
+    border: 1px solid #7a6010 !important;
+    border-radius: 2px;
+    padding: 2px 1px;
+    font-family: 'Rajdhani', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    width: 24px;
+    text-align: right;
+    outline: none;
+    flex-shrink: 1;
+    min-width: 0;
+    -moz-appearance: textfield;
+  }
 
   /* Final total */
   .final-total-block {
     background: #c0301a;
     color: #ffffff;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 8px 2px;
+    padding: 8px 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -219,38 +262,41 @@
     width: calc(100vw - 16px);
     max-width: 1200px;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: stretch;
     background: #2a2a2a;
-    padding: 10px;
+    padding: 8px;
     border-radius: 0 0 4px 4px;
     flex-wrap: wrap;
   }
   
-  .target-price-wrap { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 80px; }
-  .target-price-wrap .tp-label { color: #aaaaaa; font-size: 10px; font-weight: 700; text-transform: uppercase; text-align: center; }
-  .target-price-wrap input { background: #1a1a1a; color: #ffffff; border: 1px solid #555; border-radius: 3px; padding: 5px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 14px; font-weight: 600; width: 100%; text-align: center; outline: none; }
+  .target-price-wrap { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 80px; }
+  .target-price-wrap .tp-label { color: #aaaaaa; font-size: 9px; font-weight: 700; text-transform: uppercase; text-align: center; }
+  .target-price-wrap input { background: #1a1a1a; color: #ffffff; border: 1px solid #555; border-radius: 3px; padding: 4px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 13px; font-weight: 600; width: 100%; text-align: center; outline: none; }
   .target-price-wrap input:focus { border-color: #d4a820; }
   
-  .target-grams-display { background: #1a3a1a; border: 1px solid #2a6a2a; border-radius: 3px; padding: 5px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 14px; font-weight: 700; color: #66dd66; text-align: center; width: 100%; }
+  .target-grams-display { background: #1a3a1a; border: 1px solid #2a6a2a; border-radius: 3px; padding: 4px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 13px; font-weight: 700; color: #66dd66; text-align: center; width: 100%; }
 
-  .weight-input-wrap { display: flex; align-items: center; gap: 6px; background: #c0301a; border: 2px solid #d4a820; border-radius: 4px; padding: 4px 10px; flex: 1.5; min-width: 120px; }
-  .weight-input-wrap .wt-label { color: #ffffff; font-size: 14px; font-weight: 700; text-transform: uppercase; }
-  .weight-input-wrap input { background: #1a1a1a; color: #ffffff; border: 2px solid #d4a820; border-radius: 3px; padding: 4px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 20px; font-weight: 700; width: 100%; text-align: center; outline: none; }
+  .weight-input-wrap { display: flex; align-items: center; gap: 4px; background: #c0301a; border: 2px solid #d4a820; border-radius: 4px; padding: 2px 6px; flex: 1.5; min-width: 110px; }
+  .weight-input-wrap .wt-label { color: #ffffff; font-size: 13px; font-weight: 700; text-transform: uppercase; }
+  .weight-input-wrap input { background: #1a1a1a; color: #ffffff; border: 2px solid #d4a820; border-radius: 3px; padding: 2px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 18px; font-weight: 700; width: 100%; text-align: center; outline: none; }
   .weight-input-wrap input:focus { border-color: #ffffff; }
-  .weight-input-wrap .wt-unit { color: #d4a820; font-size: 14px; font-weight: 600; }
+  .weight-input-wrap .wt-unit { color: #d4a820; font-size: 12px; font-weight: 600; }
   
-  .btn { flex: 1; padding: 8px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 13px; font-weight: 700; border: none; border-radius: 3px; cursor: pointer; text-transform: uppercase; min-width: 80px; }
+  .btn { flex: 1; padding: 6px; font-family: 'Rajdhani', Arial, sans-serif; font-size: 12px; font-weight: 700; border: none; border-radius: 3px; cursor: pointer; text-transform: uppercase; min-width: 70px; }
   .btn-reset { background: #c0301a; color: #ffffff; }
   .btn-reset:hover { background: #8b1a10; }
 
-  .footer-note { color: #c8aa30; font-size: 12px; text-align: center; margin-top: 10px; font-family: 'Rajdhani', Arial, sans-serif; }
+  .footer-note { color: #c8aa30; font-size: 11px; text-align: center; margin-top: 8px; font-family: 'Rajdhani', Arial, sans-serif; }
 
-  /* Responsive Adjustments for Extreme Small Screens */
-  @media (max-width: 520px) {
-    .final-total-block { font-size: 13px; padding: 8px 1px; }
-    .rate-cell input { font-size: 11px; }
-    .info-row .ir-val { font-size: 10px; }
+  /* Small Screens */
+  @media (max-width: 480px) {
+    .making-input-cell input { width: 18px; font-size: 9px; }
+    .making-input-cell .hm-input { width: 20px; font-size: 9px; }
+    .making-input-cell .mc-unit, .making-input-cell .hm-label { font-size: 7px; }
+    .making-input-cell .mc-calc { font-size: 8px; }
+    .final-total-block { font-size: 11px; }
+    .info-row .ir-val { font-size: 9px; }
   }
 
 </style>
@@ -321,86 +367,53 @@
     <span class="ir-val" id="disp-sil">&#8212;</span>
   </div>
 
-  <!-- ══ Making charge inputs ══ -->
+  <!-- ══ Making charge inputs (Single Row, No "Making" Text) ══ -->
   <div class="making-input-cell">
-    <div class="mc-row">
-      <input type="number" id="mc-pct-22k" placeholder="%" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">%</span>
-    </div>
-    <div class="mc-row">
-      <input type="number" id="mc-pgr-22k" placeholder="₹" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">/g</span>
-    </div>
-    <div class="hm-input-wrap">
-      <span class="hm-label">HM</span>
-      <input type="number" class="hm-input" id="hm-flat-22k" placeholder="₹" min="0" step="1" oninput="update()" />
-    </div>
-    <div class="mc-calc" id="mc-pg-22k">&#8212;</div>
-  </div>
-  
-  <div class="making-input-cell">
-    <div class="mc-row">
-      <input type="number" id="mc-pct-20k" placeholder="%" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">%</span>
-    </div>
-    <div class="mc-row">
-      <input type="number" id="mc-pgr-20k" placeholder="₹" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">/g</span>
-    </div>
-    <div class="hm-input-wrap" style="visibility:hidden">
-      <!-- Spacer to align perfectly with 22K cell -->
-      <span class="hm-label">HM</span>
-      <input type="number" class="hm-input" placeholder="₹" disabled />
-    </div>
-    <div class="mc-calc" id="mc-pg-20k">&#8212;</div>
-  </div>
-  
-  <div class="making-input-cell">
-    <div class="mc-row">
-      <input type="number" id="mc-pct-18k" placeholder="%" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">%</span>
-    </div>
-    <div class="mc-row">
-      <input type="number" id="mc-pgr-18k" placeholder="₹" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">/g</span>
-    </div>
-    <div class="hm-input-wrap" style="visibility:hidden">
-      <span class="hm-label">HM</span>
-      <input type="number" class="hm-input" placeholder="₹" disabled />
-    </div>
-    <div class="mc-calc" id="mc-pg-18k">&#8212;</div>
+    <input type="number" id="mc-pct-22k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">%</span>
+    <span class="mc-sep">+</span>
+    <input type="number" id="mc-pgr-22k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">₹/g</span>
+    <span class="hm-sep">|</span>
+    <span class="hm-label">HM</span>
+    <input type="number" class="hm-input" id="hm-flat-22k" placeholder="0" min="0" step="1" oninput="update()" />
+    <span class="mc-calc" id="mc-pg-22k">&#8212;</span>
   </div>
 
   <div class="making-input-cell">
-    <div class="mc-row">
-      <input type="number" id="mc-pct-9k" placeholder="%" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">%</span>
-    </div>
-    <div class="mc-row">
-      <input type="number" id="mc-pgr-9k" placeholder="₹" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">/g</span>
-    </div>
-    <div class="hm-input-wrap" style="visibility:hidden">
-      <span class="hm-label">HM</span>
-      <input type="number" class="hm-input" placeholder="₹" disabled />
-    </div>
-    <div class="mc-calc" id="mc-pg-9k">&#8212;</div>
+    <input type="number" id="mc-pct-20k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">%</span>
+    <span class="mc-sep">+</span>
+    <input type="number" id="mc-pgr-20k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">₹/g</span>
+    <span class="mc-calc" id="mc-pg-20k">&#8212;</span>
   </div>
 
   <div class="making-input-cell">
-    <div class="mc-row">
-      <input type="number" id="mc-pct-sil" placeholder="%" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">%</span>
-    </div>
-    <div class="mc-row">
-      <input type="number" id="mc-pgr-sil" placeholder="₹" min="0" step="0.01" oninput="update()" />
-      <span class="mc-unit">/g</span>
-    </div>
-    <div class="hm-input-wrap" style="visibility:hidden">
-      <span class="hm-label">HM</span>
-      <input type="number" class="hm-input" placeholder="₹" disabled />
-    </div>
-    <div class="mc-calc" id="mc-pg-sil">&#8212;</div>
+    <input type="number" id="mc-pct-18k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">%</span>
+    <span class="mc-sep">+</span>
+    <input type="number" id="mc-pgr-18k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">₹/g</span>
+    <span class="mc-calc" id="mc-pg-18k">&#8212;</span>
+  </div>
+
+  <div class="making-input-cell">
+    <input type="number" id="mc-pct-9k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">%</span>
+    <span class="mc-sep">+</span>
+    <input type="number" id="mc-pgr-9k" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">₹/g</span>
+    <span class="mc-calc" id="mc-pg-9k">&#8212;</span>
+  </div>
+
+  <div class="making-input-cell">
+    <input type="number" id="mc-pct-sil" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">%</span>
+    <span class="mc-sep">+</span>
+    <input type="number" id="mc-pgr-sil" placeholder="0" min="0" step="0.01" oninput="update()" />
+    <span class="mc-unit">₹/g</span>
+    <span class="mc-calc" id="mc-pg-sil">&#8212;</span>
   </div>
 
   <!-- ══ Final total ══ -->
@@ -730,7 +743,7 @@ function saveState() {
 }
 
 function restoreState() {
-  var saved = localStorage.getItem('jwl_calc_v2') || localStorage.getItem('jwl_calc_v1'); // fallback to v1 on fresh update
+  var saved = localStorage.getItem('jwl_calc_v2') || localStorage.getItem('jwl_calc_v1');
   if (!saved) return;
   var state = JSON.parse(saved);
 
